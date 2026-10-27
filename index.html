@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>穿越找茬 · 第1关 小镇夏天（预览版）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    width: 100%; height: 100%; overflow: hidden; position: fixed;
+    background: #2B2018;
+    touch-action: none;                 /* 禁浏览器手势，保证触摸坐标准确 */
+    overscroll-behavior: none;          /* 禁滚动回弹 */
+    -webkit-user-select: none; user-select: none;
+    -webkit-touch-callout: none;        /* 禁长按菜单 */
+    font-family: system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  #game-canvas {
+    position: fixed; inset: 0;
+    width: 100vw; height: 100vh;
+    display: block;
+    touch-action: none;
+  }
+  /* 桌面端居中竖屏框（手机上仍全屏） */
+  @media (min-width: 700px) and (min-height: 700px) {
+    #game-canvas {
+      left: 50%; top: 50%; transform: translate(-50%, -50%);
+      width: auto; height: 96vh; aspect-ratio: 750 / 1624;
+      border-radius: 24px; box-shadow: 0 18px 60px rgba(0,0,0,.55);
+      background: #241A10;
+    }
+  }
+</style>
+</head>
+<body>
+<canvas id="game-canvas"></canvas>
+<script>
+  // 桌面竖屏框下 canvas 显示尺寸与 CSS 声明同步（getBoundingClientRect 为准）
+  window.addEventListener('contextmenu', function (e) { e.preventDefault(); });
+</script>
+<!-- 脚本加载顺序 = game.js 的 require 顺序；platform.js 必须最先 -->
+<script src="./js/platform.js"></script>
+<script src="./js/config.js"></script>
+<script src="./js/audio.js"></script>
+<script src="./js/level-data.js"></script>
+<script src="./js/ui.js"></script>
+<script src="./js/storage.js"></script>
+<script src="./js/ads.js"></script>
+<script src="./js/mock-ad.js"></script>
+<script src="./js/overlays.js"></script>
+<script src="./js/scene-home.js"></script>
+<script src="./js/scene-game.js"></script>
+<script src="./js/main.js"></script>
+</body>
+</html>

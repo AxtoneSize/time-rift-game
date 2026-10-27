@@ -1,0 +1,12 @@
+# 依赖与产物
+node_modules/
+*.log
+
+# 系统文件
+Thumbs.db
+.DS_Store
+
+# 编辑器
+.idea/
+.vscode/
+*.swp
